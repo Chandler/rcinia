@@ -1,0 +1,22 @@
+/* style.scss */
+
+
+#map {
+  background: #E6E6E6;
+}
+
+.layer circle {
+  fill: lightcoral;
+  fill-opacity: .5;
+  stroke: brown;
+  vector-effect: non-scaling-stroke;
+}
+
+#copy {
+  color: #000;
+  opacity: .5;
+}
+
+#copy a {
+  color: #000;
+}
