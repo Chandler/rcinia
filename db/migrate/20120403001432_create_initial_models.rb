@@ -31,8 +31,7 @@ class CreateInitialModels < ActiveRecord::Migration
     end
 
     create_table :contacts do |t|
-      t.string :first_name
-      t.string :last_name
+      t.string :name
       t.timestamps
     end
 

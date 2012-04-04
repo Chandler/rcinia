@@ -6,7 +6,7 @@
 development:
   adapter: sqlite3
   encoding: utf8
-  database: rcinia_development
+  database: rcinia_development.sqlite3
   user: 
   password:
 
