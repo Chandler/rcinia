@@ -47,7 +47,6 @@ ActiveRecord::Schema.define(:version => 20120403001432) do
     t.string   "latitude"
     t.string   "longitude"
     t.string   "datetime"
-    t.integer  "contact_id"
     t.integer  "source_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
