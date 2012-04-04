@@ -1,0 +1,4 @@
+Rails application to create metrics from my personal data sources, google latitude, google voice ect.
+
+rcinia replaces and significantly expands the original php scripts I wrote to graph my google voice and skype data.
+
