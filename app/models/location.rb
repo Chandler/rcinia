@@ -1,8 +1,6 @@
 class Location < ActiveRecord::Base
-  
   belongs_to :contact
   belongs_to :source
-  attr_accessible :contact_id
-  validates_presence_of :contact_id
-
+  has_one    :message_locationend 
+  attr_accessible :contact_id, :latitude, :longitude, :datetime
 end

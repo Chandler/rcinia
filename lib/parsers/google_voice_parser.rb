@@ -7,11 +7,11 @@ module GoogleVoiceParser
       doc.css(".message").each do |message|
         if doc.at('div.message')
           from_name = message.css('.fn').text
-          new_message = Message.create({ :to_contact_id     => from_name == "Me" ? current_contact.id : owner_contact.id,
-                                        :from_contact_id    => from_name == "Me" ? owner_contact.id   : current_contact.id,
-                                        :message_content    => message.at('q').text,
-                                        :utc_recieved_time  => message.at('abbr')['title']
-                                      })
+          new_message = Message.create({ :to_contact_id      => from_name == "Me" ? current_contact.id : owner_contact.id,
+                                         :from_contact_id    => from_name == "Me" ? owner_contact.id   : current_contact.id,
+                                         :message_content    => message.at('q').text,
+                                         :utc_received_time  => message.at('abbr')['title']
+                                       })
         end
       end
     end

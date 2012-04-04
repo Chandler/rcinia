@@ -4,12 +4,12 @@ class CreateInitialModels < ActiveRecord::Migration
       t.integer :to_contact_id
       t.integer :from_contact_id
       t.string  :message_content
-      t.string  :utc_recieved_time
+      t.string  :utc_received_time
       t.string  :source_id
       t.timestamps
     end
 
-    create_table :messages_locations do |t|
+    create_table :message_locations do |t|
       t.integer :message_id
       t.integer :location_id
       t.timestamps
@@ -19,7 +19,6 @@ class CreateInitialModels < ActiveRecord::Migration
       t.string  :latitude
       t.string  :longitude
       t.string  :datetime
-      t.integer :contact_id
       t.integer :source_id
       t.timestamps
     end

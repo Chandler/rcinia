@@ -53,21 +53,21 @@ ActiveRecord::Schema.define(:version => 20120403001432) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "messages", :force => true do |t|
-    t.integer  "to_contact_id"
-    t.integer  "from_contact_id"
-    t.string   "message_content"
-    t.string   "utc_recieved_time"
-    t.string   "source_id"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
-  end
-
-  create_table "messages_locations", :force => true do |t|
+  create_table "message_locations", :force => true do |t|
     t.integer  "message_id"
     t.integer  "location_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "messages", :force => true do |t|
+    t.integer  "to_contact_id"
+    t.integer  "from_contact_id"
+    t.string   "message_content"
+    t.string   "utc_received_time"
+    t.string   "source_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
   end
 
   create_table "sources", :force => true do |t|

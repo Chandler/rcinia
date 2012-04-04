@@ -18,17 +18,17 @@ map.add(po.image()
     + "/20760/256/{Z}/{X}/{Y}.png")
     .hosts(["a.", "b.", "c.", ""])));
 
-map.add(po.geoJson()
-    .url(crimespotting("http://oakland.crimespotting.org"
-        + "/crime-data"
-        + "?count=1000"
-        + "&format=json"
-        + "&bbox={B}"
-        + "&dstart=2010-04-01"
-        + "&dend=2010-05-01"))
-    .on("load", load)
-    .clip(false)
-    .zoom(14));
+// map.add(po.geoJson()
+//     .url(crimespotting("http://oakland.crimespotting.org"
+//         + "/crime-data"
+//         + "?count=1000"
+//         + "&format=json"
+//         + "&bbox={B}"
+//         + "&dstart=2010-04-01"
+//         + "&dend=2010-05-01"))
+//     .on("load", load)
+//     .clip(false)
+//     .zoom(14));
 
 map.add(po.compass()
     .pan("none"));
