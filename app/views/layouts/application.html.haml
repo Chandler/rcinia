@@ -7,4 +7,42 @@
     =csrf_meta_tags
   %head
     %body
-      =yield
+      #content
+        .row
+          #lheader.span6
+            #tag
+              %h2
+                Hi, my name is 
+                %span Chandler
+          #rheader.span6
+            #contactInfo
+              = link_to 'cbabraham@gmail.com', 'mailto:someone@example.com'
+              %br
+              = link_to 'facebook', 'http://www.facebook.com/chandl3r'
+              %br
+              = link_to 'twitter', 'http://www.twitter.com/chan_man'
+              %br
+              = link_to 'github', 'http://www.github.com/chandler'
+        .row
+          #sidebar.span2
+            .chartbutton
+              %span
+                = link_to 'All About Me', 'http://google.com'
+              #chartbuttonicon
+                = image_tag("/images/glyphicons/glyphicons_030_pencil.png", :alt => "rss feed")
+                
+            .chartbutton
+              %span SMS Location Breakdown
+              #chartbuttonicon
+                = image_tag("/images/glyphicons/glyphicons_041_charts.png", :alt => "rss feed")
+            .chartbutton
+              %span SMS Friendship Trending
+              #chartbuttonicon
+                = image_tag("/images/glyphicons/glyphicons_041_charts.png", :alt => "rss feed")
+            .chartbutton
+              %span SMS Word Breakdown
+              #chartbuttonicon
+                = image_tag("/images/glyphicons/glyphicons_041_charts.png", :alt => "rss feed")
+          #graphbox
+        .row
+          .span
