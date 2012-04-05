@@ -3,7 +3,7 @@ $(function(){
 var po = org.polymaps;
 
 var map = po.map()
-    .container(document.getElementById("map").appendChild(po.svg("svg")))
+    .container(document.getElementById("#graphbox").appendChild(po.svg("svg")))
     .center({lat: 37.787, lon: -122.228})
     .zoom(14)
     .zoomRange([12, 16])
