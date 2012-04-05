@@ -1,6 +1,4 @@
-//= require polymaps
-//= require kmeans
-//= require bootstrap
+
 
 // $(function(){ 
 
