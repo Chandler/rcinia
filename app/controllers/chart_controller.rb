@@ -1,5 +1,6 @@
 class ChartController < ApplicationController
   def message_location
+    #@geojson = MessageLocation.geojson
   end
 
   def friendship_trending
@@ -7,4 +8,5 @@ class ChartController < ApplicationController
 
   def word_analysis
   end
+
 end
