@@ -1,0 +1,49 @@
+  "type": "FeatureCollection",
+  "features": [
+        { 
+          "id":"177639",
+          "type":"Feature",
+          "geometry": { 
+                        "type":"Point",
+                        "coordinates":[-122.209657,37.77827]
+                      },
+          "properties": {
+                            "crime_type":"AGGRAVATED ASSAULT",
+                            "date_time":"2010-05-01 23:58:00",
+                            "description":"ASSAULT WITH FIREARM ON PERSON",
+                            "case_number":"10-026032-019",
+                            "address":"2100 block of 42nd Ave, Oakland 94601",
+                            "zip_code":null,
+                            "beat":"24X",
+                            "accuracy":"6"
+                         }
+      }, 
+
+
+
+{ "type"     => "FeatureCollection",
+  "features" => [{
+                  properties => {:a => value, b => values}
+                  geometry   => {:type => "point", coords => [1,2]}
+                  type
+                  id
+                },
+                {
+                  properties => {:a => value, b => values}
+                  geometry   => {:type => "point", coords => [1,2]}
+                  type
+                  id
+                }]
+}
+
+
+
+
+[
+  {
+    geometry: {
+        coordinates: [-122.258, 37.805], 
+         type: "Point"
+    }
+  }
+]

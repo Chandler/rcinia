@@ -1,14 +1,22 @@
 //= require kmeans
 //= require polymaps
-
-$(function(){ 
+    // a = $('#message_location').attr('data')
+    // obj = JSON.parse(a);
+    // 47cb42916aae4beb8b9f3bf68ac4e3e8
+$(function(){
   if ($('#message_location').length > 0){
+   
+    // a = $('#message_location').attr('data')
+    // obj = JSON.parse(a);
+
     var po = org.polymaps;
+    var svg = po.svg("svg");
+
     var map = po.map()
-        .container(document.getElementById("graphbox").appendChild(po.svg("svg")))
-        .center({lat: 37.807437, lon: -122.359774})
-        .zoom(12)
-        .zoomRange([12, 14])
+        .container(document.getElementById("graphbox").appendChild(svg))
+        .center({lat: 37.787, lon: -122.228})
+        .zoom(14)
+        .zoomRange([12, 16])
         .add(po.interact());
 
     map.add(po.image()
@@ -17,84 +25,78 @@ $(function(){
         + "/20760/256/{Z}/{X}/{Y}.png")
         .hosts(["a.", "b.", "c.", ""])));
 
-    // map.add(po.geoJson()
-    //     .url(crimespotting("http://oakland.crimespotting.org"
-    //         + "/crime-data"
-    //         + "?count=1000"
-    //         + "&format=json"
-    //         + "&bbox={B}"
-    //         + "&dstart=2010-04-01"
-    //         + "&dend=2010-05-01"))
-    //     .on("load", load)
-    //     .clip(false)
-    //     .zoom(14));
-
-    // function load(e) {
-    //   var cluster = e.tile.cluster || (e.tile.cluster = kmeans()
-    //       .iterations(16)
-    //       .size(64));
-
-    //   for (var i = 0; i < e.features.length; i++) {
-    //     cluster.add(e.features[i].data.geometry.coordinates);
-    //   }
-
-    //   var tile = e.tile, g = tile.element;
-    //   while (g.lastChild) g.removeChild(g.lastChild);
-
-    //   var means = cluster.means();
-    //   means.sort(function(a, b) { return b.size - a.size; });
-    //   for (var i = 0; i < means.length; i++) {
-    //     var mean = means[i], point = g.appendChild(po.svg("circle"));
-    //     point.setAttribute("cx", mean.x);
-    //     point.setAttribute("cy", mean.y);
-    //     point.setAttribute("r", Math.pow(2, tile.zoom - 11) * Math.sqrt(mean.size));
-    //   }
-    // }
+    map.add(po.geoJson()
+        .url("/assets/message_location.json")
+        .on("load", load)
+        .clip(false)
+        .zoom(14));
 
 
-    /* URL template for loading Crimespotting data. */
-    function crimespotting(template) {
-      return function(c) {
-        var max = 1 << c.zoom, column = c.column % max;
-        if (column < 0) column += max;
-        return template.replace(/{(.)}/g, function(s, v) {
-          switch (v) {
-            case "B": {
-              var nw = map.coordinateLocation({row: c.row, column: column, zoom: c.zoom}),
-                  se = map.coordinateLocation({row: c.row + 1, column: column + 1, zoom: c.zoom}),
-                  pn = Math.ceil(Math.log(c.zoom) / Math.LN2);
-              return nw.lon.toFixed(pn)
-                  + "," + se.lat.toFixed(pn)
-                  + "," + se.lon.toFixed(pn)
-                  + "," + nw.lat.toFixed(pn);
-            }
-          }
-          return v;
-        });
-      };
+    /* Create a shadow filter. */
+    map.add("svg:filter")
+        .attr("id", "shadow")
+        .attr("width", "140%")
+        .attr("height", "140%")
+      .add("svg:feGaussianBlur")
+        .attr("in", "SourceAlpha")
+        .attr("stdDeviation", 3);
+
+    /* Create radial gradient r1. */
+    svg.add("svg:radialGradient")
+        .attr("id", "r1")
+        .attr("fx", 0.5)
+        .attr("fy", 0.9)
+      .add("svg:stop")
+        .attr("offset", "0%")
+        .attr("stop-color", "#00bf17")
+        .parent()
+      .add("svg:stop")
+        .attr("offset", "100%")
+        .attr("stop-color", "#0f2f13");
+
+    /* Create radial gradient r2. */
+    svg.add("svg:radialGradient")
+        .attr("id", "r2")
+        .attr("fx", 0.5)
+        .attr("fy", 0.1)
+      .add("svg:stop")
+        .attr("offset", "0%")
+        .attr("stop-color", "#cccccc")
+        .parent()
+      .add("svg:stop")
+        .attr("offset", "100%")
+        .attr("stop-color", "#cccccc")
+        .attr("stop-opacity", 0);
+
+
+
+    function load(e) {
+      var r = 20 * Math.pow(2, e.tile.zoom - 12);
+      for (var i = 0; i < e.features.length; i++) {
+        var c = e.features[i].element,
+            g = c.parent().add("svg:g", c);
+
+        g.attr("transform", "translate(" + c.attr("cx") + "," + c.attr("cy") + ")");
+
+        g.add("svg:circle")
+            .attr("r", r)
+            .attr("transform", "translate(" + r + ",0)skewX(-45)")
+            .attr("opacity", .5)
+            .attr("filter", "url(#shadow)");
+
+        g.add(c
+            .attr("fill", "url(#r1)")
+            .attr("r", r)
+            .attr("cx", null)
+            .attr("cy", null));
+
+        g.add("svg:circle")
+            .attr("transform", "scale(.95,1)")
+            .attr("fill", "url(#r2)")
+            .attr("r", r);
+      }
     }
-
-    crimespotting.categorize = (function() {
-      var categories = {
-        "aggravated assault": "violent",
-        "murder": "violent",
-        "robbery": "violent",
-        "simple assault": "violent",
-        "arson": "property",
-        "burglary": "property",
-        "theft": "property",
-        "vandalism": "property",
-        "vehicle theft": "property",
-        "alcohol": "quality",
-        "disturbing the peace": "quality",
-        "narcotics": "quality",
-        "prostitution": "quality"
-      };
-      return function(d) {
-        return categories[d.properties.crime_type.toLowerCase()];
-      };
-    })();
-  }
+  } 
 });
 
 
