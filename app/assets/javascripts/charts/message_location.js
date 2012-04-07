@@ -69,7 +69,7 @@ $(function(){
 
      /** Post-process the GeoJSON points! */
     function load(e) {
-      var r =  20;
+      var r =  15;
       for (var i = 0; i < e.features.length; i++) {
         var c = e.features[i]
 
