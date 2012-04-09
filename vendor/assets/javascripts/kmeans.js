@@ -29,7 +29,7 @@ function kmeans() {
 
     // Initialize k random (unique!) means.
     for (var i = 0, m = 2 * n; i < m; i++) {
-      var p = points[~~(Math.random() * points.length)], id = p.x + "/" + p.y;
+      var p = points[~~(Math.random() * points.length)].geometry.coordinates, id = p.x + "/" + p.y;
       if (!(id in seen)) {
         seen[id] = 1;
         if (means.push({x: p.x, y: p.y}) >= n) break;
@@ -52,11 +52,11 @@ function kmeans() {
 
       // Find the mean closest to each point.
       for (var i = 0; i < points.length; i++) {
-        var point = points[i], mean = kd.find(point);
+        var point = points[i].geometry.coordinates, mean = kd.find(point);
         mean.sumX += point.x;
         mean.sumY += point.y;
         mean.size++;
-        mean.points.push(point);
+        mean.points.push(points[i]);
       }
 
       // Compute the new means.

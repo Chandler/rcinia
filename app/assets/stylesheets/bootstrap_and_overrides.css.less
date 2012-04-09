@@ -7,6 +7,7 @@
 @iconSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings.png');
 @iconWhiteSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings-white.png');
 
+
 //colors!
 @lightblue:  #0093EF;
 @mediumblue: #006BAD;
@@ -14,30 +15,92 @@
 @textgray:     #F7F7F7;
 @textdarkgray: #2D2C30;
 
-@graphred: #CC0000;
+@graphred: #C21F4D;
 @darkred: #660000;
+
+
+// location map
+//=====================================================
+
+#map_legend_box{
+  width: 240px;
+  height:  25px;
+  background-color: @textgray;
+  margin-left: 790px;
+  margin-right: 10px;
+
+  position:absolute; top:15; right: 0;
+  padding-top: 5px;
+  margin-top: 10px;
+
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+
+    .map_legend_item{
+      margin-left: 15px;
+      margin-top: 2px;
+      margin-bottom: 2px;
+      font-family: "courier new", Helvetica, Sans-Serif;
+      font-size: 20px;
+      text-align: center;
+      height: auto;
+      float: left;
+      #leftvalue{
+        color: @lightblue;        
+      }    
+      #rightvalue{
+        color: @graphred;
+      }    
+
+    }
+
+}
+
+
 
 #slider{
   height: 10px;
-  width:  750px;
+  width:  773px;
   position: relative;
+  margin-top: -3px;
+}
+
+#hours_slider_package{
+  position: absolute;
 }
 
 #hours_box{
-  background-color: @graphred;
-  height: 30px;
-  width:  750px;
+  height:  38px;
+  width:  auto;
   position: relative;
 }
 
 #hour{
   background-color: @textgray;
-  height: 30px;
-  width: 28px;
+  height: 35px;
   position: relative;
   float: left;
-  margin-left: 1px;
-  margin-right: 1px;
+  font-family: Arial, Helvetica, Sans-Serif;
+  font-size: 10px;
+
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: #ddd;
+
+
+      
+  float:left;
+  padding-top: 5px;
+  text-align:center;
+  width: 30px;
+
+
+  #top{
+    margin-bottom: -5px;
+    font-family: Arial, Helvetica, Sans-Serif;
+    font-size: 1.6em;  
+  }
 }
 
 
@@ -47,36 +110,24 @@
 
 circle {
   vector-effect: non-scaling-stroke;
-  fill-opacity: .5;
+  fill-opacity: .3;
+  stroke-opacity: .4;
+
+}
+
+circle[dayofweek="weekend"]{
   fill: @lightblue;
   stroke: @darkblue;
 }
 
-//circe[id="1"]{
- // fill: @lightblue;
-  //stroke: @darkblue;
-//}
-
-
-.grid {
-  stroke: white;
-  stroke-opacity: .4;
-  shape-rendering: crispEdges;
+circle[dayofweek="weekday"]{
+  fill: @graphred;
+  stroke: @darkred;
 }
 
 
-#copy {
-  color: #000;
-  opacity: .5;
-}
-
-#copy a {
-  color: #000;
-}
-
-
-
-
+// layout
+//=====================================================
 
 #rheader{
   float: right;
@@ -161,11 +212,12 @@ circle {
 }
 
 #graphbox{
-    background-color: @lightblue;
+    background-color: @darkblue;
     height: 550px;
     margin-left: 165px;
     margin-right: 10px;
     width: auto;
+    position: relative;
 }
 
 body{
@@ -184,3 +236,11 @@ body{
 //
 // Example:
 // @linkColor: #ff0000;
+
+
+
+//jquery ui overrides
+
+a.ui-corner-all {width: 50px; height: 10px;}
+
+
