@@ -1,6 +1,7 @@
 class ChartController < ApplicationController
   def message_location
     #@geojson = MessageLocation.geojson
+
   end
 
 
