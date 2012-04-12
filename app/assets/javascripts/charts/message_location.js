@@ -40,14 +40,13 @@ $(function(){
         .container(document.getElementById("graphbox").appendChild(svg))
         .center({lat: 37.808522, lon: -122.364581})
         .zoom(12)
-        .zoomRange([11, 13])
-        .add(po.interact());
+        .zoomRange([12, 12]);
 
-    // map.add(po.image()
-    //     .url(po.url("http://{S}tile.cloudmade.com"
-    //     + "/47cb42916aae4beb8b9f3bf68ac4e3e8" // http://cloudmade.com/register
-    //     + "/998/256/{Z}/{X}/{Y}.png")
-    //     .hosts(["a.", "b.", "c.", ""])));
+    map.add(po.image()
+        .url(po.url("http://{S}tile.cloudmade.com"
+        + "/47cb42916aae4beb8b9f3bf68ac4e3e8" // http://cloudmade.com/register
+        + "/998/256/{Z}/{X}/{Y}.png")
+        .hosts(["a.", "b.", "c.", ""])));
 
     map.add(po.geoJson()
         .url("/assets/location.json")
