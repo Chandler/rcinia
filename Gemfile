@@ -6,15 +6,12 @@ gem 'rails', '3.2.3'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development, :test do
-  gem 'nokogiri'
   gem 'sqlite3'
   gem 'mysql2'
 end
 
 gem 'json'
 gem 'haml'
-gem 'nokogiri'
-gem 'twitter-bootstrap-rails'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -24,7 +21,6 @@ group :assets do
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platform => :ruby
 
-  gem 'uglifier', '>= 1.0.3'
 end
 
 gem 'jquery-rails'

@@ -1,3 +1,4 @@
+alert("hey")
 $(function(){ 
   $(".chartbutton").click(function(){
        window.location=$(this).find("a").attr("href");
