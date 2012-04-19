@@ -1,11 +1,4 @@
-class HomeController < ApplicationController
-  layout 'blank'
-  def index
-    
-  end
-
-  def d3
-    a = '{
+{
  "name": "flare",
  "children": [
   {
@@ -138,43 +131,7 @@ class HomeController < ApplicationController
     {"name": "Literal", "size": 1214},
     {"name": "Match", "size": 3748},
     {"name": "Maximum", "size": 843},
-    {
-     "name": "methods",
-     "children": [
-      {"name": "add", "size": 593},
-      {"name": "and", "size": 330},
-      {"name": "average", "size": 287},
-      {"name": "count", "size": 277},
-      {"name": "distinct", "size": 292},
-      {"name": "div", "size": 595},
-      {"name": "eq", "size": 594},
-      {"name": "fn", "size": 460},
-      {"name": "gt", "size": 603},
-      {"name": "gte", "size": 625},
-      {"name": "iff", "size": 748},
-      {"name": "isa", "size": 461},
-      {"name": "lt", "size": 597},
-      {"name": "lte", "size": 619},
-      {"name": "max", "size": 283},
-      {"name": "min", "size": 283},
-      {"name": "mod", "size": 591},
-      {"name": "mul", "size": 603},
-      {"name": "neq", "size": 599},
-      {"name": "not", "size": 386},
-      {"name": "or", "size": 323},
-      {"name": "orderby", "size": 307},
-      {"name": "range", "size": 772},
-      {"name": "select", "size": 296},
-      {"name": "stddev", "size": 363},
-      {"name": "sub", "size": 600},
-      {"name": "sum", "size": 280},
-      {"name": "update", "size": 307},
-      {"name": "variance", "size": 335},
-      {"name": "where", "size": 299},
-      {"name": "xor", "size": 354},
-      {"name": "_", "size": 264}
-     ]
-    },
+
     {"name": "Minimum", "size": 843},
     {"name": "Not", "size": 1554},
     {"name": "Or", "size": 970},
@@ -384,10 +341,4 @@ class HomeController < ApplicationController
    ]
   }
  ]
-}'
-
-    @friend_graph  = a.to_json
-
-  end
-
-end
+}
