@@ -3,49 +3,10 @@
   %head
     %title Rcinia
     =stylesheet_link_tag    "application", :media => "all"
-    =javascript_include_tag "application"
     =csrf_meta_tags
   %head
     %body
       #content
-        .row
-          #lheader.span4
-            #tag
-              %h2
-                Hi, my name is 
-                %span Chandler
-          #rheader.span2
-            #contactInfo
-              = link_to 'cbabraham@gmail.com', 'mailto:someone@example.com'
-              %br
-              = link_to 'facebook', 'http://www.facebook.com/chandl3r'
-              %br
-              = link_to 'twitter', 'http://www.twitter.com/chan_man'
-              %br
-              = link_to 'github', 'http://www.github.com/chandler'
-        .row
-          #sidebar.span2
-            .chartbutton
-              %span
-                = link_to 'All About Me', about_path
-              #chartbuttonicon
-                = image_tag("/images/glyphicons/glyphicons_030_pencil.png")
-            #selected.chartbutton
-              %span
-                = link_to 'Location By Time of Day', message_location_path
-              #chartbuttonicon
-                = image_tag("/images/glyphicons/glyphicons_041_charts.png")
-            .chartbutton
-              %span
-                = link_to 'SMS Friendship Trending', friendship_trending_path
-              #chartbuttonicon
-                = image_tag("/images/glyphicons/glyphicons_041_charts.png")
-            .chartbutton
-              %span
-                = link_to 'SMS Word Breakdown', word_analysis_path
-              #chartbuttonicon
-                = image_tag("/images/glyphicons/glyphicons_041_charts.png")
-          #graphbox
-            = yield
-        .row
-          .span
+        %svg
+
+=javascript_include_tag "application"

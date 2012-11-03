@@ -11,8 +11,10 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require jquery_ujs
+//= require d3
+//= require nvd3
+//= require underscore
+//= require backbone
+//= require app
 //= require_tree .
-//= require twitter/bootstrap
-//= require jquery-ui
-//= require d3.v2
+

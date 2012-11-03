@@ -1,5 +1,5 @@
 module GoogleVoiceParser
-  def self.parse(source_path = "../sources/google_voice/cbabraham/voice/conversations/*.html")
+  def self.parse(source_path = "../sources/google_voice/Voice/Calls/*.html")
     owner_contact = Contact.contact_from_username("Me")
     Dir.glob(source_path).each do |file_path|
       current_contact = Contact.contact_from_username(username_from_path(file_path))
