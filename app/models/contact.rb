@@ -19,4 +19,8 @@ class Contact < ActiveRecord::Base
     end
   end
 
+  def display_name
+    self.contact_usernames.first.username
+  end
+
 end

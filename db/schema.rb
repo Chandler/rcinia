@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120403001432) do
+ActiveRecord::Schema.define(:version => 20121103010017) do
 
   create_table "contact_email_addresses", :force => true do |t|
     t.integer  "contact_id"
@@ -67,6 +67,15 @@ ActiveRecord::Schema.define(:version => 20120403001432) do
     t.string   "source_id"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+  end
+
+  create_table "sms_weekly_aggs", :force => true do |t|
+    t.integer  "contact_id"
+    t.string   "name"
+    t.integer  "message_count"
+    t.string   "timeseries_data"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "sources", :force => true do |t|

@@ -1,0 +1,192 @@
+#body {
+  padding-top: 60px;
+}
+
+#content{
+  height: 600px;
+}
+
+
+
+
+
+
+.node circle {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+.node {
+  font: 10px sans-serif;
+}
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5px;
+}
+#map_legend_box {
+  width: 240px;
+  height: 25px;
+  background-color: #F7F7F7;
+  margin-left: 790px;
+  margin-right: 10px;
+  position: absolute;
+  top: 15;
+  right: 0;
+  padding-top: 5px;
+  margin-top: 10px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+#map_legend_box .map_legend_item {
+  margin-left: 15px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  font-family: "courier new", Helvetica, Sans-Serif;
+  font-size: 20px;
+  text-align: center;
+  height: auto;
+  float: left;
+}
+#map_legend_box .map_legend_item #leftvalue {
+  color: #0093EF;
+}
+#map_legend_box .map_legend_item #rightvalue {
+  color: #C21F4D;
+}
+#slider {
+  height: 10px;
+  width: 773px;
+  position: relative;
+  margin-top: -3px;
+}
+#hours_slider_package {
+  position: absolute;
+}
+#hours_box {
+  height: 38px;
+  width: auto;
+  position: relative;
+}
+#hour {
+  background-color: #F7F7F7;
+  height: 35px;
+  position: relative;
+  float: left;
+  font-family: Arial, Helvetica, Sans-Serif;
+  font-size: 10px;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: #ddd;
+  float: left;
+  padding-top: 5px;
+  text-align: center;
+  width: 30px;
+}
+#hour #top {
+  margin-bottom: -5px;
+  font-family: Arial, Helvetica, Sans-Serif;
+  font-size: 1.6em;
+}
+#map {
+  background: #E6E6E6;
+}
+circle {
+  vector-effect: non-scaling-stroke;
+  fill-opacity: .3;
+  stroke-opacity: .4;
+}
+circle[dayofweek="weekend"] {
+  fill: #0093EF;
+  stroke: #074063;
+}
+circle[dayofweek="weekday"] {
+  fill: #C21F4D;
+  stroke: #660000;
+}
+#rheader {
+  float: right;
+}
+#rheader #contactInfo {
+  float: right;
+  margin-top: 10px;
+}
+#rheader #contactInfo a {
+  color: #FFF;
+}
+#lheader {
+  height: 100px;
+}
+#lheader #tag {
+  margin-top: 30px;
+  margin-left: 20px;
+}
+#lheader #tag h2 {
+  color: #FFF;
+}
+#lheader #tag h2 span {
+  color: #0093EF;
+}
+#sidebar {
+  background-color: #006BAD;
+  height: 550px;
+  border-right-style: solid;
+  border-right-width: 5px;
+  border-right-color: #0093EF;
+}
+#sidebar #chartsheader h3 {
+  color: #fff;
+  margin-left: 10px;
+}
+#sidebar .chartbutton {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+#sidebar #selected {
+  background-color: #F7F7F7;
+}
+#sidebar #selected a {
+  color: #2D2C30;
+}
+#sidebar .chartbutton {
+  height: auto;
+  margin: 2px;
+  background-color: #074063;
+  padding: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: left;
+}
+#sidebar .chartbutton span {
+  color: #F7F7F7;
+  font-size: 15px;
+}
+#sidebar .chartbutton span a {
+  text-decoration: none;
+  color: #F7F7F7;
+  font-size: 15px;
+}
+#sidebar .chartbutton #chartbuttonicon {
+  margin-top: 0px;
+  margin-left: 0px;
+  float: right;
+}
+#graphbox {
+  background-color: #074063;
+  height: 550px;
+  margin-left: 165px;
+  margin-right: 10px;
+  width: auto;
+  position: relative;
+}
+body {
+  background-position: left top;
+  background-image: url(https://secure.assets.tumblr.com/images/register_login/blue_dark.png);
+  background-color: #445C75;
+}
+a.ui-corner-all {
+  width: 50px;
+  height: 10px;
+}

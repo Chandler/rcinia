@@ -1,15 +1,13 @@
 class ChartController < ApplicationController
-  def message_location
-    #@geojson = MessageLocation.geojson
-
+  def index
   end
 
-
-
-  def friendship_trending
+  def smsTimeseries(limit = 15)
+      data = SmsWeeklyAgg.all(:limit=>limit, :order => "message_count desc")
+      render :json => data.map{|m| ActiveSupport::JSON.decode(m.timeseries_data)}  
   end
 
-  def word_analysis
+  def show
   end
-
 end
+
