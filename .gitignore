@@ -16,3 +16,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+/Users/cabraham/personal/rcinia/app/controllers/chart_controller.rb
+
+chart_data/
