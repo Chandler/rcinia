@@ -2,7 +2,7 @@ class ChartController < ApplicationController
   def index
   end
 
-  def smsTimeseries(limit = 15)
+  def smsTimeseries(limit = 25)
       data = SmsWeeklyAgg.all(:limit=>limit, :order => "message_count desc")
       render :json => data.map{|m| ActiveSupport::JSON.decode(m.timeseries_data)}  
   end

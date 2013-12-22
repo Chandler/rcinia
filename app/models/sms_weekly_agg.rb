@@ -45,6 +45,15 @@ class SmsWeeklyAgg< ActiveRecord::Base
 
   def self.epoch_milli_from_year_week week
     week_num, year = week.split("-")
-    Chronic::parse(Date.commercial(year.to_i,week_num.to_i)).to_i*1000
+    week_num = week_num.to_i
+    year = year.to_i
+
+    #53 week year edge case
+    if (week_num == 53)
+      week_num = 01
+      year = year + 1
+    end
+    puts week_num
+    Chronic::parse(Date.commercial(year, week_num)).to_i*1000
   end
 end

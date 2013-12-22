@@ -8,7 +8,7 @@
     },
     render: function(){
       nv.addGraph(function() {
-        var chart = nv.models.lineChart()
+        var chart = nv.models.stackedAreaChart()
                       .x(function(d) { return d[0] })
                       .y(function(d) { return d[1] })
                       .clipEdge(true);
